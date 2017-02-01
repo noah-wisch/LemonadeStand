@@ -2,11 +2,7 @@
 const app = angular.module('LemonadeApp', []);
 
 const controllers = [
-    require('./controllers/ingredientlist'),
-    // require('./controllers/day'),
-    // require('./controllers/customers'),
-    // require('./controllers/visitors'),
-    // require('./controllers/money'),
+    require('./controllers/stats'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -14,10 +10,28 @@ for (let i = 0; i < controllers.length; i++) {
 };
 
 const services = [
-    require('./controllers/ingredientlist'),
+    require('./services/ingredientservice'),
 ];
 
 for (let i = 0; i < services.length; i++) {
-    app.controller(services[i].name, services[i].func);
+    app.factory(services[i].name, services[i].func);
 }
+
+// app.config(($stateProvider) => {
+//     // $stateProvider is the object we add routes ('states') to.
+//     $stateProvider.state({
+//         name: '',
+//         url: '',
+//         component: 'stats',
+//     });
+// });
+
+app.component('statSection', {
+    controller: 'StatsController',
+    templateUrl: 'templates/stats.html',
+    bindings: {
+        stat: '<',
+    },
+});
+
 

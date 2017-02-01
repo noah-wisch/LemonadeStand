@@ -11,40 +11,21 @@
 
 <body ng-app="LemonadeApp">
     <h1>Queen Bey's Lemoneyde</h1>
-    <section ng-controller="IngredientListController">
+    <!--<section ng-controller="StatsController">
+        <ul>
+            <li ng-repeat="stat in stats">
+                <h2>{{ stat.label }}</h2>
+                <p>{{ stat.value }}</p>
+            </li>
+        </ul>
+    </section>-->
+    <stat-section stat="stat"></stat-section>
+    <!--<section ng-controller="IngredientListController">
         <ul>
             <li ng-repeat="ingredient in ingredients">
                 <h2>Item: {{ ingredient.name }}</h2>
                 <p>Available: {{ ingredient.count }}</p>
                 <p>Cost: {{ ingredient.price }}</p>
-            </li>
-        </ul>
-    </section>
-    <!--<section ng-controller="DayController">
-        <ul>
-            <li ng-repeat="day in days">
-                <h2>Day {{ day.count }}</h2>
-            </li>
-        </ul>
-    </section>
-    <section ng-controller="MoneyController">
-        <ul>
-            <li ng-repeat="money in monies">
-                <h2>Money {{ money.count }}</h2>
-            </li>
-        </ul>
-    </section>
-    <section ng-controller="VisitorController">
-        <ul>
-            <li ng-repeat="visitor in visitors">
-                <h2>Day {{ visitor.count }}</h2>
-            </li>
-        </ul>
-    </section>
-    <section ng-controller="CustomerController">
-        <ul>
-            <li ng-repeat="customer in customers">
-                <h2>Day {{ customer.count }}</h2>
             </li>
         </ul>
     </section>-->
