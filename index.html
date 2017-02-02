@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Yonce's Stand</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="LemonApp">
+    <header>
+        <h1>The Stand - A Young Entrepreneurs Dream</h1>
+    </header>
+
+    <section class="namestand" ng-controller="NewGameController">
+        <h2>Start Your Stand:</h2>
+        <input type="text" placeholder="Title" ng-model="title">
+        <button ng-click="newGame()">Squeeze Lemons</button>
+    </section>
+
+    <section class="manager" ng-controller="ManagerController">
+        <ul class="data">
+            <li>
+                <h1>{{ stats.label }}</h1>
+                <h3>{{ stats.value }}</h3>
+            </li>
+        </ul>
+        <ul class="ingredients">
+            <li>
+                <h1>{{ stats.label }}</h1>
+                <h3>{{ stats.value }}</h3>
+            </li>
+        </ul>
+
+    </section>
+
+    <section class="highscores" ng-controller="ScoreController">
+        <ul>
+            <li ng-repeat="score in scores">
+                <h1>{{ stats.name }}</h1>
+                <p>{{ stats.balance }}</p>
+                <p>{{ stats.days }}</p>
+                <!--have this show total days in business-->
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>

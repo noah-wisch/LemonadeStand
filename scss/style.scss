@@ -1,0 +1,46 @@
+@import '../node_modules/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+body {
+    background-color:#522D80;
+    color: #FFF;
+    // padding-left: 20px;
+}
+
+header {
+         text-align: center;
+}
+
+.namestand {
+    @include grid-row();
+
+    h2 {
+         text-align: center;
+    }
+
+    button {
+        @include button;
+        @include grid-column(12);
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #f66733;
+    }
+
+    button:hover {
+        background-color: #FFF;
+        color: #f66733;
+    }
+      button:focus {
+        background-color: lightgrey;
+    }
+
+    input {
+        @include grid-column(12);
+        padding-top: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+}
