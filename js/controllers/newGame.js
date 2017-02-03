@@ -1,20 +1,11 @@
 
-// app.controller('NewGameController', ($scope) => {
-//     $scope.title = 'Yonce\'s Lemonade Stand';
-//     $scope.newGame = () => {
-//         console.log('is this thing on?')
-//     };
-// });
-
 module.exports = {
     name: 'NewGameController',
-    func($scope) {
-        $scope.start = [
-            { title: 'Yonce\'s Lemonade Stand' },
-        ];
+    func($scope, NewGameService) {
+        $scope.title = 'Yonce\'s Lemonade Stand';
+        $scope.newGame = () => {
+            console.log('testing')
+        NewGameService.send($scope.title)
+        }
     },
-    newGame() {
-        console.log('is this thing on?')
-    },
-
-}
+};

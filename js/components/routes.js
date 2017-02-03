@@ -1,3 +1,4 @@
+
 app.config(($stateProvider) => {
     // $stateProvider is the object we add routes ('states') to.
     $stateProvider.state({
