@@ -13,8 +13,17 @@ for (let i = 0; i < controllers.length; i++) {
 
 const services = [
     require('./services/newGame'),
+    require('./services/manager'),
 ];
 
 for (let i = 0; i < services.length; i++) {
     app.factory(services[i].name, services[i].func);
 };
+
+const routes = require('./routes');
+
+app.config($stateProvider => {
+    for (let i = 0; i < routes.length; i++) {
+        $stateProvider.state(routes[i]);
+    }
+});
