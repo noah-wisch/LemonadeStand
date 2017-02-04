@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Yonce's Stand</title>
+    <title>The Stand</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="app.js"></script>
@@ -14,38 +14,16 @@
         <h1>The Stand - A Young Entrepreneurs Dream</h1>
     </header>
 
-    <section class="namestand" ng-controller="NewGameController">
-        <h2>Start Your Stand:</h2>
-        <input type="text" placeholder="Title" ng-model="title">
-        <button ng-click="newGame()">Squeeze Lemons</button>
-    </section>
-
-    <!--<section class="manager" ng-controller="ManagerController">
-        <ul class="data">
-            <li>
-                <h1>{{ stats.label }}</h1>
-                <h3>{{ stats.value }}</h3>
-            </li>
-        </ul>
-        <ul class="ingredients">
-            <li>
-                <h1>{{ stats.label }}</h1>
-                <h3>{{ stats.value }}</h3>
-            </li>
-        </ul>
-
-    </section>
-
-    <section class="highscores" ng-controller="ScoreController">
+    <nav>
         <ul>
-            <li ng-repeat="score in scores">
-                <h1>{{ stats.name }}</h1>
-                <p>{{ stats.balance }}</p>
-                <p>{{ stats.days }}</p>
-                
-            </li>
+            <li><a ui-sref="new-game">Login</a></li>
+            <li><a ui-sref="stand-manager">Manage Your Stand</a></li>
+            <li><a ui-sref="highscore">Highscores</a></li>
         </ul>
-    </section>-->
+    </nav>
+
+    <ui-view></ui-view>
+
 </body>
 
 </html>

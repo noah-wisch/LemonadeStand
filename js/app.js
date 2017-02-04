@@ -1,5 +1,5 @@
 
-const app = angular.module('LemonApp', [/* 'ui.router' */]);
+const app = angular.module('LemonApp', ['ui.router']);
 
 const controllers = [
     require('./controllers/newGame'),
@@ -25,5 +25,13 @@ const routes = require('./routes');
 app.config($stateProvider => {
     for (let i = 0; i < routes.length; i++) {
         $stateProvider.state(routes[i]);
+    }
+});
+
+const components = require('./components');
+
+app.component(compName => {
+    for (let i = 0; i < components.length; i++) {
+        compName.state(components[i]);
     }
 });
