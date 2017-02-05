@@ -1,10 +1,9 @@
-
-const app = angular.module('LemonApp', ['ui.router']);
+const app = angular.module('Lemon', ['ui.router']);
 
 const controllers = [
     require('./controllers/newGame'),
-    // require('./controllers/manager'),
-    // require('./controllers/score'),
+    require('./controllers/manager'),
+    require('./controllers/score'),
 ];
 
 for (let i = 0; i < controllers.length; i++) {
@@ -25,13 +24,31 @@ const routes = require('./routes');
 app.config($stateProvider => {
     for (let i = 0; i < routes.length; i++) {
         $stateProvider.state(routes[i]);
+        console.log('fuck me');
     }
 });
 
-const components = require('./components');
-
-app.component(compName => {
-    for (let i = 0; i < components.length; i++) {
-        compName.state(components[i]);
-    }
+app.component('gameStart', {
+    controller: 'NewGameController',
+    templateUrl: 'templates/start.html',
 });
+
+app.component('gameManager', {
+    controller: 'ManagerController',
+    templateUrl: 'templates/manager.html',
+});
+
+app.component('gameScore', {
+    templateUrl: 'templates/score.html',
+    controller: 'ScoreController',
+    // bindings: {
+    //     person: '<',
+    //     whenIClick: '&',
+    // },
+});
+
+// const components = require('./components');
+
+// for (let i = 0; i < components.length; i++) {
+//   app.component(compName.state(components[i]));
+// };
