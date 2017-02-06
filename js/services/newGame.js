@@ -17,7 +17,7 @@ module.exports = {
         }
     },
     getId() {
-        return '81cfbeed-757a-4511-9dc8-5c36a04124af';
+        return 'e734a348-640c-46ff-93b5-e5411f50a376';
         console.log('stand identifier');
     },
 };

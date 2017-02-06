@@ -4,6 +4,10 @@ module.exports = {
     func($scope, NewGameService, ManagerService) {
         console.log('managerController');
         const identifier = NewGameService.getId();
-        ManagerService.currentId(identifier);
+
+        $interval(function () {
+            ManagerService.currentId(identifier);
+        }, 3000);
     },
+    
 };

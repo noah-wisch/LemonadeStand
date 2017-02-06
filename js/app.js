@@ -24,7 +24,7 @@ const routes = require('./routes');
 app.config($stateProvider => {
     for (let i = 0; i < routes.length; i++) {
         $stateProvider.state(routes[i]);
-        console.log('fuck me');
+        console.log('routes log');
     }
 });
 
